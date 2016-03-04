@@ -4,7 +4,33 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: [:development, :test]
+
+
+# Use postgresql as the database for production
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+# Use bootstrap library for styles
+gem 'bootstrap-sass', '~> 3.3.5'
+
+# Use font awesomeness for look up
+gem 'font-awesome-sass', '4.2.0'
+
+# Use gem Devise
+gem 'devise', '~> 3.4.1'
+
+# Use stripe for handling payments
+gem 'stripe', '~> 1.16.1'
+
+# Use figaro to hide secret keys
+gem 'figaro', '~> 1.0.0'
+
+# Use Paperclip for picture upload
+gem 'paperclip', '~> 4.2.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
